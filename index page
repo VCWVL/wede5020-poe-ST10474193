@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;">
+    <title>Multitools - Fashion & Clothing</title>
+    <!-- Font Optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <div class="logo">
+            <a href="index.html">Multitools</a>
+        </div>
+        <div class="menu">
+            <a href="index.html">Home</a>
+            <a href="products.html">Shop</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="enquiry.html">Inquiry</a>
+        </div>
+    </nav>
+
+    <!-- Hero Image Section -->
+    <div class="hero">
+        <img src="images/heroImage.jpg" alt="Stylish clothing collection">
+        <div class="hero-text">
+            <h1>Your Fashion. Your Tool.</h1>
+            <p>Functional, versatile, and stylish apparel.</p>
+        </div>
+    </div>
+
+    <!-- Brief Introduction Section -->
+    <main class="container intro-section">
+        <h2>Discover Your Style</h2>
+        <p>At Multitools, we believe fashion should be functional, versatile, and stylish. Discover high-quality, everyday wear that adapts to your lifestyle. Whether you're looking for casual outfits or pieces that make a statement, we’ve got you covered.</p>
+        <a href="products.html" class="btn">Shop Now</a>
+    </main>
+
+    <!-- Featured Products Section -->
+    <section class="featured-products">
+        <div class="container">
+            <h2>Featured Products</h2>
+            <div class="featured-grid">
+                <!-- Featured Item 1 -->
+                <div class="featured-item">
+                    <img src="images/jacket.jpg" alt="Jacket" loading="lazy">
+                    <div class="featured-info">
+                        <h4>Jackets Collection</h4>
+                        <p class="price">$59.99</p>
+                        <button class="btn" onclick="showProductDetails('jackets')">View Details</button>
+                    </div>
+                </div>
+                <!-- Featured Item 2 -->
+                <div class="featured-item">
+                    <img src="images/sneakers.jpg" alt="Sneakers" loading="lazy">
+                    <div class="featured-info">
+                        <h4>Sneakers Collection</h4>
+                        <p class="price">$79.99</p>
+                        <button class="btn" onclick="showProductDetails('sneakers')">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Details Modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Multitools. All Rights Reserved.</p>
+        <p>Instructional content referenced from <a href="https://www.w3schools.com" target="_blank" rel="noopener noreferrer">W3Schools</a>.</p>
+    </footer>
+
+    <script src="products.js" defer></script>
+    <script src="main.js" defer></script>
+</body>
+</html>
