@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; frame-src https://www.google.com;">
+    <title>Contact Us</title>
+    <!-- Font Optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <nav>
+        <div class="logo">
+            <a href="index.html">Multitools</a>
+        </div>
+        <div class="menu">
+            <a href="index.html">Home</a>
+            <a href="products.html">Shop</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="enquiry.html">Inquiry</a>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <h1>Contact Us</h1>
+        <p>We'd love to hear from you. Reach out with any questions or feedback.</p>
+    </header>
+
+    <main class="container">
+        <div class="contact-grid">
+            <div class="contact-details">
+                <h2>Contact Information</h2>
+                <p><strong>Address:</strong> 123 Main Street, Cityville, Country</p>
+                <p><strong>Phone:</strong> +1 (123) 456-7890</p>
+                <p><strong>Email:</strong> contact@multitools.com</p>
+            </div>
+            <div class="map-container">
+                <h2>Our Location</h2>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.867372497149!2d-122.41941628468277!3d37.77492927975986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808c4e2a567f%3A0xb1cbbb9c87e5648f!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2sin!4v1642047425311!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+
+        <!-- Contact Form Section -->
+        <section class="form-section">
+            <h2>Get in Touch</h2>
+            <form id="contactForm" action="/submit_form" method="post">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="6" placeholder="Your message here..." required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Multitools. All Rights Reserved.</p>
+        <p>Instructional content referenced from <a href="https://www.w3schools.com" target="_blank" rel="noopener noreferrer">W3Schools</a>.</p>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // You can add AJAX logic here to send data to a server
+            // For this example, we'll just show an alert and clear the form.
+
+            alert('Thank you for your message! We will get back to you soon.');
+
+            // Clear the form fields
+            this.reset();
+        });
+    </script>
+
+    <script src="main.js" defer></script>
+
+</body>
+</html>
