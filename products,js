@@ -1,0 +1,146 @@
+const products = [
+    {
+        id: 'urban-tee',
+        name: 'Urban Classic Tee',
+        brand: 'City Threads',
+        description: 'A high-quality, comfortable tee made from 100% organic cotton. Perfect for everyday wear.',
+        originalPrice: 35.00,
+        salePrice: 29.99,
+        image: 'images/shirt.jpg',
+        sizes: ["S", "M", "L", "XL"],
+        colors: ["White", "Blue", "Black", "Pink"]
+    },
+    {
+        id: 'flex-chino',
+        name: 'Flex-Fit Chinos',
+        brand: 'Modern Wear',
+        description: 'Comfortable and stylish pants for work or casual wear, with a bit of stretch for the perfect fit.',
+        originalPrice: 50.00,
+        salePrice: 39.99,
+        image: 'images/pants.jpg',
+        sizes: ["28", "30", "32", "34", "36"],
+        colors: ["Black", "Blue", "Gray", "Khaki"]
+    },
+    {
+        id: 'explorer-jacket',
+        name: 'Explorer Windbreaker',
+        brand: 'Trailblazer Co.',
+        description: 'A trendy and lightweight jacket for all seasons, providing protection from wind and light rain.',
+        originalPrice: 80.00,
+        salePrice: 59.99,
+        image: 'images/jacket.jpg',
+        sizes: ["S", "M", "L", "XL"],
+        colors: ["Black", "Brown", "Navy"]
+    },
+    {
+        id: 'cozy-knit-sweater',
+        name: 'Cozy-Knit Sweater',
+        brand: 'Hearth & Home',
+        description: 'A warm and cozy sweater made from a soft wool blend, perfect for chilly days.',
+        originalPrice: 65.00,
+        salePrice: 45.99,
+        image: 'images/sweater.jpg',
+        sizes: ["S", "M", "L", "XL"],
+        colors: ["Gray", "Navy", "Red", "Green"]
+    },
+    {
+        id: 'weekend-shorts',
+        name: 'Weekend Shorts',
+        brand: 'SunSeeker',
+        description: 'Casual and comfortable shorts for a relaxed look, made from durable twill fabric.',
+        originalPrice: 30.00,
+        salePrice: 24.99,
+        image: 'images/shorts.jpg',
+        sizes: ["S", "M", "L", "XL"],
+        colors: ["Beige", "Blue", "Black"]
+    },
+    {
+        id: 'velocity-runner',
+        name: 'Velocity Runners',
+        brand: 'Apex Kicks',
+        description: 'Stylish and comfortable sneakers for everyday use, featuring a cushioned sole for maximum comfort.',
+        originalPrice: 110.00,
+        salePrice: 79.99,
+        image: 'images/sneakers.jpg',
+        sizes: ["7", "8", "9", "10", "11", "12"],
+        colors: ["White", "Black", "Gray", "Blue"]
+    }
+];
+
+function showProductDetails(productId) {
+    const modal = document.getElementById("productModal");
+    const modalBody = document.getElementById("modalBody");
+    const product = products.find(p => p.id === productId);
+
+    if (!product) return;
+
+    modalBody.innerHTML = `
+        <img id="modalImage" src="${product.image}" alt="${product.name}">
+        <div id="modalDetails">
+            <h2>${product.name}</h2>
+            <p class="brand">by ${product.brand}</p>
+            <p>${product.description}</p>
+            <div class="modal-price">
+                <span class="sale-price">$${product.salePrice.toFixed(2)}</span>
+                <span class="original-price">$${product.originalPrice.toFixed(2)}</span>
+            </div>
+            <p><strong>Available Sizes:</strong> ${product.sizes.join(", ")}</p>
+            <p><strong>Available Colors:</strong> ${product.colors.join(", ")}</p>
+            <button class="btn" onclick="addToCart('${product.id}')">Add to Cart</button>
+        </div>
+    `;
+
+    modal.style.display = "block";
+}
+
+function renderProducts() {
+    const productGrid = document.getElementById('product-grid');
+    if (!productGrid) return;
+
+    productGrid.innerHTML = products.map(product => {
+        const salePercentage = Math.round(((product.originalPrice - product.salePrice) / product.originalPrice) * 100);
+        return `
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="${product.image}" alt="${product.name}" class="product-image" onclick="showProductDetails('${product.id}')">
+                    <div class="sale-badge">${salePercentage}% OFF</div>
+                    <button class="quick-add-btn" onclick="event.stopPropagation(); addToCart('${product.id}');">Quick Add</button>
+                </div>
+                <div class="product-info" onclick="showProductDetails('${product.id}')">
+                    <p class="product-brand">${product.brand}</p>
+                    <h3 class="product-name">${product.name}</h3>
+                    <div class="product-pricing">
+                        <span class="sale-price">$${product.salePrice.toFixed(2)}</span>
+                        <span class="original-price">$${product.originalPrice.toFixed(2)}</span>
+                    </div>
+                </div>
+            </div>
+        `;
+    }).join('');
+}
+
+// Close modal when clicking the 'x'
+document.querySelector(".close").onclick = function() {
+    document.getElementById("productModal").style.display = "none";
+}
+
+// Close modal when clicking outside of the modal content
+window.onclick = function(event) {
+    const modal = document.getElementById("productModal");
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+function addToCart(productId) {
+    const modal = document.getElementById("productModal");
+    const product = products.find(p => p.id === productId);
+    alert(`Added ${product.name} to cart!`);
+    if (modal.style.display === "block") {
+        modal.style.display = "none";
+    }
+    // Here you can add more advanced cart functionality
+}
+
+// Render products when the page loads
+document.addEventListener('DOMContentLoaded', renderProducts);
