@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;">
+    <title>Multitools - About Us</title>
+    <!-- Font Optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <div class="logo">
+            <a href="index.html">Multitools</a>
+        </div>
+        <div class="menu">
+            <a href="index.html">Home</a>
+            <a href="products.html">Shop</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="enquiry.html">Inquiry</a>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <h1>About Multitools</h1>
+        <p>Learn about our story, mission, and the team behind the brand.</p>
+    </header>
+
+    <main class="container">
+        <div class="about-us">
+            <section id="history" class="about-section">
+                <h3>Our History</h3>
+                <p>Founded in 2020, Multitools was born out of the desire to create functional, stylish clothing for everyday wear. We believe that fashion should be accessible, versatile, and built to last. Starting as a small online brand, we quickly expanded into a global presence, offering high-quality apparel for a variety of lifestyles.</p>
+            </section>
+
+            <section id="mission" class="about-section">
+                <h3>Our Mission & Vision</h3>
+                <p>Our mission is to provide clothing that meets the highest standards of quality and reflects the values of sustainability and inclusivity. We aim to redefine modern fashion by creating timeless pieces that are both functional and fashionable, becoming a global leader recognized for our commitment to quality, innovation, and social responsibility.</p>
+            </section>
+
+            <section id="team" class="about-section">
+                <h3>Meet Our Team</h3>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <img src="images/johnDoe.jpg" alt="Team Member 1" loading="lazy">
+                        <h4>John Doe</h4>
+                        <p class="role">Founder & CEO</p>
+                        <p>John is the visionary behind Multitools, bringing years of experience in both fashion and business to the company.</p>
+                    </div>
+
+                    <div class="team-member">
+                        <img src="images/janeSmith.jpg" alt="Team Member 2" loading="lazy">
+                        <h4>Jane Smith</h4>
+                        <p class="role">Chief Design Officer</p>
+                        <p>Jane leads the design team, ensuring that every piece of clothing we create is not only stylish but functional.</p>
+                    </div>
+
+                    <div class="team-member">
+                        <img src="images/janeSmith.jpg" alt="Team Member 3" loading="lazy">
+                        <h4>Michael Lee</h4>
+                        <p class="role">Head of Marketing</p>
+                        <p>Michael is responsible for bringing our brand to life across various platforms, from social media to advertising campaigns.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Multitools. All Rights Reserved.</p>
+        <p>Instructional content referenced from <a href="https://www.w3schools.com" target="_blank" rel="noopener noreferrer">W3Schools</a>.</p>
+    </footer>
+
+    <script src="main.js" defer></script>
+
+</body>
+</html>
