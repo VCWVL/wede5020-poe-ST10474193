@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;">
+    <title>Shop Our Collection - Multitools</title>
+    <!-- Font Optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <nav>
+        <div class="logo">
+            <a href="index.html">Multitools</a>
+        </div>
+        <div class="menu">
+            <a href="index.html">Home</a>
+            <a href="products.html">Shop</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="enquiry.html">Inquiry</a>
+        </div>
+    </nav>
+    <header class="page-header">
+        <h1>Our Collection</h1>
+        <p>Discover curated styles with unbeatable quality and prices.</p>
+    </header>
+
+    <main class="container">
+        <p style="text-align: center; margin-bottom: 40px;">Have a question about a specific product? <a href="enquiry.html">Make an inquiry</a>.</p>
+        <!-- Product Grid -->
+        <div id="product-grid" class="product-grid-new"></div>
+    </main>
+
+    <!-- Product Details Modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Multitools. All Rights Reserved.</p>
+        <p>Instructional content referenced from <a href="https://www.w3schools.com" target="_blank" rel="noopener noreferrer">W3Schools</a>.</p>
+    </footer>
+
+    <script src="products.js" defer></script>
+    <script src="main.js" defer></script>
+</body>
+</html>
